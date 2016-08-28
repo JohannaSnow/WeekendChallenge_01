@@ -16,14 +16,14 @@ var addEmployee = function() {
   var annualSalary = document.getElementById('annualSalaryIn').value;
 
 
-//made a new employee object
+  //made a new employee object
   var newEmployees = {
     firstName: firstName,
     lastName: lastName,
     idNumber: idNumber,
     jobTitle: jobTitle,
-    annualSalary: annualSalary
-  };
+    annualSalary: annualSalary,
+
 };
 //alert user if something is left blank
 if( newEmployees.firstname === '' || newEmployees.lastName === '' || newEmployees.idNumber === '' || newEmployees.jobTitle === '' || newEmployees.annualSalary === ''){
@@ -53,11 +53,12 @@ var displayEmployees = function(){
   console.log( allEmployees );
   // empty our div element
   document.getElementById( 'allEmployees' ).innerHTML='';
+};
 
   for( var i = 0; i < employees.length; i++){
     //Employee information (name, id number, salary)
     var employeeInfo =  '<h2>' + employee[ i ].firstName+ ' ' + employee[ i ].lastName + ' ' + employee[ i ].idNumber + '' + employee[i].jobTitle + '' + employee[i].annualSalary +'' + '<button onClick="takeOut(' + i + ')">Remove Employee</button></p>';
-    // append employee info to output div
+    // append Employee info to output div
   document.getElementById( 'allEmployees' ).innerHTML += employeeInfo;
   } // end for
    // end employeeInfo
@@ -77,8 +78,9 @@ var displayEmployees = function(){
     combinedSalary = 0;
     for (var i = 0; i < employees.length; i++) {
       combinedSalary += Number(employees[i].annualSalary);
+
+      return combinedSalary;
     }
   };
     console.log(combinedSalary);
-    return combinedSalary;
    // end calculateSalary
