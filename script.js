@@ -1,11 +1,11 @@
 console.log (' script is sourced ');
 
 //create an empty array to hold the information
-var employeeInfo = [];
+var employees = [];
 var combinedSalary;
 
 var addEmployee = function() {
-  console.log('in addEmployeeInfo');
+  console.log('in addEmployees');
 
 
 
@@ -17,7 +17,7 @@ var addEmployee = function() {
 
 
 //made a new employee object
-  var newEmployee = {
+  var newEmployees = {
     firstName: firstName,
     lastName: lastName,
     idNumber: idNumber,
@@ -26,9 +26,9 @@ var addEmployee = function() {
   };
 };
 //alert user if something is left blank
-if( newEmployee.firstname === '' || newEmployee.lastName === '' || newEmployee.idNumber === '' || newEmployee.jobTitle === '' ||
-newEmployee.annualSalary === '' ||{
+if( newEmployees.firstname === '' || newEmployees.lastName === '' || newEmployees.idNumber === '' || newEmployees.jobTitle === '' || newEmployees.annualSalary === ''){
 alert( 'Please fill this in with correct information');
+}
 
 else{
 clearInputs(); ///clears the boxes so it doesnt post twice //////
@@ -50,7 +50,7 @@ document.getElementById('annualSalaryIn').value='';
 
 var displayEmployees = function(){
   console.log( 'inDisplayEmployees');
-  console.log( Weekend Challenge );
+  console.log( allEmployees );
   // empty our div element
   document.getElementById( 'allEmployees' ).innerHTML='';
 
@@ -78,13 +78,7 @@ var displayEmployees = function(){
     for (var i = 0; i < employees.length; i++) {
       combinedSalary += Number(employees[i].annualSalary);
     }
+  };
     console.log(combinedSalary);
     return combinedSalary;
-  }; // end calculateSalary
-
-
-
-
-
-// for (var i = 0; i < employeeInfo.length; i++) {
-//   employeeInfo[i]
+   // end calculateSalary
