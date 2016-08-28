@@ -4,7 +4,7 @@ console.log (' script is sourced ');
 var employees = [];
 var combinedSalary;
 
-var addEmployee = function() {
+var addEmployees = function() {
   console.log('in addEmployees');
 
 
@@ -14,6 +14,7 @@ var addEmployee = function() {
   var idNumber = document.getElementById('idNumberIn').value;
   var jobTitle = document.getElementById('jobTitleIn').value;
   var annualSalary = document.getElementById('annualSalaryIn').value;
+};
 
 
   //made a new employee object
@@ -33,7 +34,7 @@ alert( 'Please fill this in with correct information');
 else{
 clearInputs(); ///clears the boxes so it doesnt post twice //////
   // push employees entered into program
-    employees.push(newEmployee);
+employees.push(newEmployees);
   //display employees
   displayEmployees();
 }
@@ -79,8 +80,9 @@ var displayEmployees = function(){
     for (var i = 0; i < employees.length; i++) {
       combinedSalary += Number(employees[i].annualSalary);
 
+  console.log(combinedSalary);
       return combinedSalary;
     }
-  };
-    console.log(combinedSalary);
+};
+
    // end calculateSalary
