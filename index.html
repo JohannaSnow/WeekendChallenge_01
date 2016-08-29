@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Weekend Challege Number One</title>
-    <script src='script.js'charset="utf-8"></script>
+    <crip\\\
+
   </head>
   <body>
     <h1> Employee Info</h1>
@@ -12,13 +13,18 @@
     <input type="text" id="idNumberIn" value="" placeholder = "ID Number">
     <input type="text" id="jobTitleIn" value="" placeholder = "Job Title">
     <input type="text" id="annualSalaryIn" value="" placeholder = "Annual Salary">
-    <button onclick='addEmployees()'>Add Employee Info</button>
-    <div id="allEmployees">
-
-    <h2>NONE</h2>
+    <input type="text" id="displayEmployees" value="" placeholder="Display Employee">
+    <button onclick="newEmployee()">Add Employee Info</button>
+    <button onclick="removeEmployee()">Remove Employee</button>
+    <h2 class="salary">Total Monthly Salary</h2>
+    <div id="allSalary">
     </div>
-
-
-
-  </body>
-</html>
+    <h2 class="current">Current Employees</h2>
+    <div id="allEmployees">
+    </div>
+    <h2 class="former">Former Employees</h2>
+    <div id="formerEmp">
+    </div>
+    <script src="script.js" charset="utf-8"></script>
+    </body>
+  </html>
