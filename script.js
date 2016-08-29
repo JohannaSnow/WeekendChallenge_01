@@ -11,14 +11,26 @@ var calculateIncome = function(salary){
 
 var newEmployee = function () {
 
-var newEmployee = {
+var empObj = {
     firstName: document.getElementById('firstNameIn').value,
     lastName: document.getElementById('lastNameIn').value,
     idNumber: document.getElementById('idNumberIn').value,
     jobTitle: document.getElementById('jobTitleIn').value,
     annualSalary: parseInt(document.getElementById('annualSalaryIn').value)
   }; //end newEmployee
-  console.log(newEmployee);
+  console.log(empObj);
+  //alert user if something is left blank
+  if (newEmployee.firstName === '' || newEmployee.lastName === '' || newEmployee.idNumber === '' || newEmployee.jobTitle === '' || newEmployee.annualSalary === ''){
+    alert('Please fill this in with correct information');
+  }else{
+     //clearInputs(); ///clears the boxes so it doesnt post twice //////
+    // push employees entered into program
+    employees.push(empObj);
+    //display employees
+    displayEmployees();
+
+  }
+
 };
 
 var displayEmployees = function(){
@@ -65,46 +77,26 @@ var displayEmployees = function () {
   console.log('newEmployee');
   console.log('clearInputs');
   // empty our div element
-  document.getElementById('displayEmployees').innerHTML= '';
+  document.getElementById('allEmployees').innerHTML= '';
+  for ( var i = 0; i < employees.length; i++){
+//Employee information (name, id number, salary)
+var employeeInfo = '<h2 class="empname">' + employees[i].firstName + ' ' + employees[i].lastName + '</h2>Employee Number: ' + Number(employees[i].idNumber) + '<br />JobTitle: ' + employees[i].jobTitle + '<br />Annual Salary: ' + Number(employees[i].annualSalary) + '<br /><button onClick="removeEmployee(' + i + ')">Remove Employee</button>';
+     document.getElementById('allEmployees').innerHTML += employeeInfo;
+   }
 };
-
-      for ( var i = 0; i < employees.length; i++){
-    //Employee information (name, id number, salary)
-    var employeeInfo = '<h2 class="empname">' + empolyees[i].firstName + ' ' + employees[i].lastName + '</h2>Employee Number: ' + Number(employees[i].idNumber) + '<br />JobTitle: ' + employees[i].jobTitle + '<br />Annual Salary: ' + Number(employees[i].annualSalary) + '<br /><button onClick="removeEmployee(' + i + ')">Remove Employee</button>';
-         document.getElementById('allEmployees').innerHTML += employeeInfo;
-       }
-
-
-
-
-
-
-
-//alert user if something is left blank
-if (newEmployee.firstName === '' || newEmployee.lastName === '' || newEmployee.idNumber === '' || newEmployee.jobTitle === '' || newEmployee.annualSalary === ''){
-  alert('Please fill this in with correct information');
-}else{
-   //clearInputs(); ///clears the boxes so it doesnt post twice //////
-  // push employees entered into program
-  employees.push();
-  //display employees
-  displayEmployees();
-
-}
-
 //
   var removeEmployee = function( index ){
-    console.log( 'taking out the ' + employee[ index ].firstName + ' ' + employee[ index ].lastName + '' + employee[ index ].idNumber + '' + employee[ index ].jobTitle);
+    console.log( 'taking out the ' + employees[ index ].firstName + ' ' + employees[ index ].lastName + '' + employees[ index ].idNumber + '' + employees[ index ].jobTitle);
     //splice the employee at this index from out array
    //ARRAY.splice( Index, NumbertoRemove)
-   employee.splice( index, 4 );
+   employees.splice( index, 4 );
    //show employees on DOM
    displayEmployees();
  }; //end removeEmployee
 
   // Calculate combined employee salary/cost to the company
   calculateSalary = function (){
-    var calculateSalary = {
+    var calculateSalary = {};
     document.getElementById('addInfo').innerHTML='';
     var newEmployee;
     combinedSalary = 0;
